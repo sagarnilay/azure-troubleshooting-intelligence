@@ -1,6 +1,12 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 
+from app.database.connection import Base, engine
+from app.models.case_db import Case  # noqa: F401 - registers the model with Base
+
+
+Base.metadata.create_all(bind=engine)
+
 
 app = FastAPI(
     title="Azure Troubleshooting Intelligence",

@@ -26,6 +26,9 @@ __pycache__/
 # Logs
 *.log
 
+# Local SQLite database
+*.db
+
 # Build / distribution
 build/
 dist/
